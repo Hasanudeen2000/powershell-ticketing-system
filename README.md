@@ -6,14 +6,17 @@ A basic ticket system using PowerShell and a CSV file
 1. Open PowerShell.
 
 2. Create a CSV file for tickets:
+
 "TicketID,User,Issue,Status" | Out-File -FilePath "C:\Tickets\tickets.csv"
 
-3. Add a new ticket:
+4. Add a new ticket:
+   
 "1,Alice,Printer not working,Open" | Out-File -FilePath "C:\Tickets\tickets.csv" -Append
 
-4. Open CSV file in C drive to check tickets
+6. Open CSV file in C drive to check tickets
 
-5. Update ticket to "Completed":
+7. Update ticket to "Completed":
+
 $Tickets = Import-Csv -Path "C:\Tickets\tickets.csv"
 
 foreach ($Ticket in $Tickets) {
@@ -25,6 +28,7 @@ foreach ($Ticket in $Tickets) {
 $Tickets | Export-Csv -Path "C:\Tickets\tickets.csv" -NoTypeInformation
 
 6. Delete all completed tickets:
+
 $Tickets = Import-Csv -Path "C:\Tickets\tickets.csv"
 
 $ActiveTickets = $Tickets | Where-Object { $_.Status -ne "Completed" }
