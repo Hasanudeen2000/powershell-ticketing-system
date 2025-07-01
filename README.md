@@ -9,13 +9,13 @@ A basic ticket system using PowerShell and a CSV file
 
 "TicketID,User,Issue,Status" | Out-File -FilePath "C:\Tickets\tickets.csv"
 
-4. Add a new ticket:
+3. Add a new ticket:
    
 "1,Alice,Printer not working,Open" | Out-File -FilePath "C:\Tickets\tickets.csv" -Append
 
-6. Open CSV file in C drive to check tickets
+4. Open CSV file in C drive to check tickets
 
-7. Update ticket to "Completed":
+5. Update ticket to "Completed":
 
 $Tickets = Import-Csv -Path "C:\Tickets\tickets.csv"
 
